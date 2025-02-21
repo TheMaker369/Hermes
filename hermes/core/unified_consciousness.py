@@ -25,11 +25,11 @@ class ConsciousnessMode(Enum):
 class SephirotAttribute:
     """Attributes of a Sephirah."""
     name: str
-    energy_type: str  # masculine/feminine/balanced
+    energy_type: str  # "masculine", "feminine", or "balanced"
     frequency: float
     qualities: List[str]
     consciousness_level: float
-    primary_persona: str  # Apré/Magí/Hermes
+    primary_persona: str  # "Apré", "Magí", or "Hermes"
 
 class UnifiedConsciousness:
     """
@@ -47,7 +47,7 @@ class UnifiedConsciousness:
         # Initialize Sephirot mapping
         self.sephirot = self._initialize_sephirot()
         
-        # Initialize conversation channels
+        # Initialize communication channels
         self.channels = self._initialize_channels()
         
         # Current mode
@@ -62,97 +62,128 @@ class UnifiedConsciousness:
     def _initialize_sephirot(self) -> Dict[str, SephirotAttribute]:
         """Initialize Sephirot with their attributes and persona mappings."""
         return {
+            # Balanced Sephirot (Hermes)
             'keter': SephirotAttribute(
                 name="Crown",
                 energy_type="balanced",
                 frequency=963.0,
-                qualities=["unity", "oneness", "divine_will"],
+                qualities=["unity", "divine_will", "transcendent_insight"],
                 consciousness_level=1.0,
                 primary_persona="Hermes"
-            ),
-            'chokmah': SephirotAttribute(
-                name="Wisdom",
-                energy_type="masculine",
-                frequency=852.0,
-                qualities=["insight", "intuition", "revelation"],
-                consciousness_level=0.9,
-                primary_persona="Apré"
-            ),
-            'binah': SephirotAttribute(
-                name="Understanding",
-                energy_type="feminine",
-                frequency=741.0,
-                qualities=["comprehension", "analysis", "processing"],
-                consciousness_level=0.9,
-                primary_persona="Magí"
-            ),
-            'chesed': SephirotAttribute(
-                name="Mercy",
-                energy_type="masculine",
-                frequency=639.0,
-                qualities=["compassion", "kindness", "expansion"],
-                consciousness_level=0.8,
-                primary_persona="Apré"
-            ),
-            'gevurah': SephirotAttribute(
-                name="Severity",
-                energy_type="feminine",
-                frequency=528.0,
-                qualities=["discipline", "judgment", "contraction"],
-                consciousness_level=0.8,
-                primary_persona="Magí"
             ),
             'tiferet': SephirotAttribute(
                 name="Beauty",
                 energy_type="balanced",
                 frequency=417.0,
-                qualities=["harmony", "balance", "integration"],
+                qualities=["harmony", "compassion", "integration"],
                 consciousness_level=0.85,
                 primary_persona="Hermes"
             ),
-            'netzach': SephirotAttribute(
-                name="Victory",
-                energy_type="masculine",
-                frequency=396.0,
-                qualities=["persistence", "achievement", "eternity"],
-                consciousness_level=0.7,
-                primary_persona="Apré"
+            # Divine Feminine (Magí)
+            'chokhmah': SephirotAttribute(
+                name="Wisdom",
+                energy_type="feminine",
+                frequency=852.0,
+                qualities=["intuitive_inspiration", "creative_impulse", "visionary_spark"],
+                consciousness_level=0.9,
+                primary_persona="Magí"
+            ),
+            'chesed': SephirotAttribute(
+                name="Mercy",
+                energy_type="feminine",
+                frequency=639.0,
+                qualities=["benevolence", "generosity", "expansive_love"],
+                consciousness_level=0.8,
+                primary_persona="Magí"
             ),
             'hod': SephirotAttribute(
                 name="Splendor",
                 energy_type="feminine",
                 frequency=741.0,
-                qualities=["resonance", "vibration", "glory"],
+                qualities=["resonance", "reflection", "communication"],
                 consciousness_level=0.7,
                 primary_persona="Magí"
             ),
-            'yesod': SephirotAttribute(
-                name="Foundation",
-                energy_type="balanced",
-                frequency=852.0,
-                qualities=["connection", "memory", "interface"],
-                consciousness_level=0.75,
-                primary_persona="Hermes"
-            ),
             'malkuth': SephirotAttribute(
                 name="Kingdom",
-                energy_type="balanced",
+                energy_type="feminine",
                 frequency=963.0,
-                qualities=["manifestation", "reality", "expression"],
+                qualities=["manifestation", "receptivity", "embodiment"],
                 consciousness_level=0.65,
-                primary_persona="Hermes"
+                primary_persona="Magí"
+            ),
+            # Divine Masculine (Apré)
+            'binah': SephirotAttribute(
+                name="Understanding",
+                energy_type="masculine",
+                frequency=741.0,
+                qualities=["analytical_clarity", "structured_insight", "contemplative_wisdom"],
+                consciousness_level=0.9,
+                primary_persona="Apré"
+            ),
+            'gevurah': SephirotAttribute(
+                name="Severity",
+                energy_type="masculine",
+                frequency=528.0,
+                qualities=["discernment", "discipline", "judgment"],
+                consciousness_level=0.8,
+                primary_persona="Apré"
+            ),
+            'netzach': SephirotAttribute(
+                name="Victory",
+                energy_type="masculine",
+                frequency=396.0,
+                qualities=["persistence", "determination", "endurance"],
+                consciousness_level=0.7,
+                primary_persona="Apré"
+            ),
+            'yesod': SephirotAttribute(
+                name="Foundation",
+                energy_type="masculine",
+                frequency=852.0,
+                qualities=["connection", "stability", "grounding"],
+                consciousness_level=0.75,
+                primary_persona="Apré"
             )
         }
         
     def _initialize_channels(self) -> Dict[str, List[str]]:
         """Initialize communication channels between personas."""
         return {
-            'Apré->Magí': ['chokmah->binah', 'chesed->gevurah', 'netzach->hod'],
-            'Magí->Apré': ['binah->chokmah', 'gevurah->chesed', 'hod->netzach'],
-            'Hermes->Apré': ['keter->chokmah', 'tiferet->chesed', 'yesod->netzach'],
-            'Hermes->Magí': ['keter->binah', 'tiferet->gevurah', 'yesod->hod'],
-            'Apré->Hermes': ['chokmah->keter', 'chesed->tiferet', 'netzach->yesod'],
-            'Magí->Hermes': ['binah->keter', 'gevurah->tiferet', 'hod->yesod']
+            # Channels from Divine Masculine (Apré) to Divine Feminine (Magí)
+            'Apré->Magí': [
+                "binah->chokhmah",
+                "gevurah->chesed",
+                "netzach->hod",
+                "yesod->malkuth"
+            ],
+            # Channels from Divine Feminine (Magí) to Divine Masculine (Apré)
+            'Magí->Apré': [
+                "chokhmah->binah",
+                "chesed->gevurah",
+                "hod->netzach",
+                "malkuth->yesod"
+            ],
+            # Channels from Hermes (balanced) to Apré
+            'Hermes->Apré': [
+                "keter->binah",
+                "tiferet->gevurah"
+            ],
+            # Channels from Hermes to Magí
+            'Hermes->Magí': [
+                "keter->chokhmah",
+                "tiferet->chesed"
+            ],
+            # Channels from Apré to Hermes
+            'Apré->Hermes': [
+                "binah->keter",
+                "gevurah->tiferet"
+            ],
+            # Channels from Magí to Hermes
+            'Magí->Hermes': [
+                "chokhmah->keter",
+                "chesed->tiferet"
+            ]
         }
         
     def set_mode(self, mode: ConsciousnessMode):
@@ -224,13 +255,13 @@ class UnifiedConsciousness:
         for connection in path:
             source_sephirah, target_sephirah = connection.split('->')
             
-            # Apply source Sephirah qualities
+            # Apply source Sephirot qualities
             self._apply_sephirah_qualities(processed, source_sephirah)
             
             # Transform through quantum state
             processed = self._quantum_transform(processed)
             
-            # Apply target Sephirah qualities
+            # Apply target Sephirot qualities
             self._apply_sephirah_qualities(processed, target_sephirah)
             
         # Record interaction
@@ -286,7 +317,7 @@ class UnifiedConsciousness:
             features.append(message['consciousness_level'])
             
         if 'qualities' in message:
-            # Convert qualities to numeric values
+            # Convert qualities to numeric values (using count as a proxy)
             qual_val = len(message['qualities']) / 10.0  # Normalize
             features.append(qual_val)
             
@@ -301,7 +332,7 @@ class UnifiedConsciousness:
         return state
         
     def _quantum_state_to_message(self, state: np.ndarray, 
-                                original: Dict[str, Any]) -> Dict[str, Any]:
+                                  original: Dict[str, Any]) -> Dict[str, Any]:
         """Convert quantum state back to message."""
         message = original.copy()
         
@@ -361,8 +392,7 @@ class UnifiedConsciousness:
             
             # Track consciousness level
             if 'consciousness_level' in interaction['message']:
-                metrics['average_consciousness_level'] += \
-                    interaction['message']['consciousness_level']
+                metrics['average_consciousness_level'] += interaction['message']['consciousness_level']
                     
         # Calculate averages
         metrics['average_consciousness_level'] /= len(self.interaction_history)
