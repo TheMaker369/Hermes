@@ -13,14 +13,16 @@ from hermes.sephirot.gevurah import Gevurah, Sanitizer
 from hermes.sephirot.netzach import Netzach, APIAdapter
 from hermes.config import settings
 
+
 # Yesod (Foundation) Tests
 @pytest.mark.asyncio
 async def test_yesod_initialization():
     """Test Yesod initialization with ChromaDB."""
-    with patch('chromadb.PersistentClient') as mock_chroma:
+    with patch("chromadb.PersistentClient") as mock_chroma:
         yesod = Yesod()
         assert yesod.chroma is not None
         mock_chroma.assert_called_once()
+
 
 @pytest.mark.asyncio
 async def test_yesod_storage():
@@ -30,18 +32,16 @@ async def test_yesod_storage():
     result = await yesod.store(test_data)
     assert result["status"] in ["success", "storage_failed"]
 
+
 # Gevurah (Severity) Tests
 @pytest.mark.asyncio
 async def test_gevurah_validation():
     """Test request validation in Gevurah."""
     gevurah = Gevurah()
-    valid_request = {
-        "query": "test",
-        "context": {},
-        "metadata": {}
-    }
+    valid_request = {"query": "test", "context": {}, "metadata": {}}
     result = await gevurah.validate(valid_request)
     assert result == valid_request
+
 
 @pytest.mark.asyncio
 async def test_gevurah_sanitization():
@@ -55,6 +55,7 @@ async def test_gevurah_sanitization():
         dangerous_input = {"text": "DROP TABLE users;"}
         await sanitizer.sanitize_input(dangerous_input)
 
+
 # Netzach (Victory) Tests
 @pytest.mark.asyncio
 async def test_netzach_integration():
@@ -63,6 +64,7 @@ async def test_netzach_integration():
     test_data = {"query": "test"}
     result = await netzach.integrate(test_data)
     assert "status" in result
+
 
 @pytest.mark.asyncio
 async def test_api_adapter():

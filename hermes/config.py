@@ -4,12 +4,14 @@ Configuration management for the Hermes AI System.
 
 from pydantic_settings import BaseSettings
 
+
 class Settings(BaseSettings):
     """System-wide configuration settings."""
+
     # API Keys
     openai_api_key: str = ""
     firecrawl_api_key: str = ""
-    
+
     # Feature Flags
     allow_remote: bool = True
     allow_openai: bool = False
@@ -35,5 +37,6 @@ class Settings(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
         extra = "ignore"
+
 
 settings = Settings()

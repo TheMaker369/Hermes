@@ -13,13 +13,14 @@ from ..utils.circuit_breaker import circuit_breaker
 
 logger = logging.getLogger(__name__)
 
+
 class Yesod:
     """Foundation sphere - Manages persistent knowledge storage."""
-    
+
     def __init__(self):
         self.chroma = self._init_chroma()
         self.ray_pool = self._init_ray_pool()
-        
+
     def _init_chroma(self):
         """Initialize ChromaDB connection based on config."""
         try:
@@ -28,16 +29,15 @@ class Yesod:
                     host=settings.chroma_url,
                     settings=ChromaSettings(
                         chroma_db_impl="duckdb+parquet",
-                        persist_directory=settings.chroma_path
-                    )
+                        persist_directory=settings.chroma_path,
+                    ),
                 )
             else:
                 client = chromadb.PersistentClient(
                     path=settings.chroma_path,
                     settings=ChromaSettings(
-                        anonymized_telemetry=False,
-                        is_persistent=True
-                    )
+                        anonymized_telemetry=False, is_persistent=True
+                    ),
                 )
             return client
         except Exception as e:
@@ -48,10 +48,9 @@ class Yesod:
     def _init_ray_pool(self):
         """Initialize Ray actors for distributed persistence."""
         try:
-            return ActorPool([
-                PersistenceActor.remote()
-                for _ in range(settings.research_breadth)
-            ])
+            return ActorPool(
+                [PersistenceActor.remote() for _ in range(settings.research_breadth)]
+            )
         except Exception as e:
             logger.error(f"Ray persistence pool failed: {str(e)}")
             raise
@@ -60,21 +59,20 @@ class Yesod:
         """Store processed knowledge with metadata."""
         try:
             # Distribute storage across Ray actors
-            future = self.ray_pool.submit(
-                lambda a, v: a.store.remote(v), data
-            )
+            future = self.ray_pool.submit(lambda a, v: a.store.remote(v), data)
             return await future
         except Exception as e:
             logger.error(f"Storage failed: {str(e)}")
             return {"status": "storage_failed", "error": str(e)}
 
+
 @ray.remote
 class PersistenceActor:
     """Ray actor for distributed persistence operations."""
-    
+
     def __init__(self):
         self.buffer = []
-        
+
     async def store(self, data: Dict) -> Dict:
         """Store data with consistency checks."""
         try:
