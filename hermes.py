@@ -40,6 +40,11 @@ from opentelemetry.sdk.trace.export import (BatchSpanProcessor,
                                             ConsoleSpanExporter)
 from pydantic_settings import BaseSettings
 
+from hermes.core.config import settings
+
+if settings.enable_gpu:
+    # GPU-specific logic here
+    pass
 
 # -------------------- Configuration Management --------------------
 class Settings(BaseSettings):
