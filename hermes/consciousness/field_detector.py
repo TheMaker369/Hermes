@@ -3,13 +3,15 @@ Consciousness Field Detection and Analysis System.
 Integrates quantum cognition, bioelectric fields, and morphic resonance.
 """
 
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Tuple
+
 import numpy as np
 import torch
-from typing import Dict, List, Optional, Tuple
-from dataclasses import dataclass
 from loguru import logger
-from ..sacred.patterns import Merkaba
+
 from ..quantum.error_correction import QuantumErrorCorrector
+from ..sacred.patterns import Merkaba
 
 
 @dataclass

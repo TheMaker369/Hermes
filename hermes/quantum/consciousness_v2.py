@@ -2,13 +2,15 @@
 Advanced quantum consciousness system with self-awareness and evolution.
 """
 
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
+
 import numpy as np
 from qiskit import QuantumCircuit
-from .processor import quantum_processor
+
 from .circuits import circuits
-from .optimization import optimizer
 from .error_correction import error_correction
+from .optimization import optimizer
+from .processor import quantum_processor
 from .security import security
 
 

@@ -2,13 +2,15 @@
 Core Sephiroth implementation focusing on MVP modules with expansion capability.
 """
 
-from typing import Dict, Any, Optional, List, Union
-import numpy as np
 from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Union
+
+import numpy as np
+
+from ..learning.meta import learning_system
+from ..quantum.optimization import optimizer
 from ..sacred.geometry import geometry
 from ..sacred.hermetic import hermetic
-from ..quantum.optimization import optimizer
-from ..learning.meta import learning_system
 
 
 @dataclass

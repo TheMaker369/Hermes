@@ -2,9 +2,11 @@
 Netzach (Victory) - External service integration and API management.
 """
 
-from typing import Dict, Optional
 import logging
+from typing import Dict, Optional
+
 import httpx
+
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker
 

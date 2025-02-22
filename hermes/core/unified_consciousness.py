@@ -3,16 +3,18 @@ Unified Consciousness Framework for Hermes AI.
 Integrates Apré, Magí, and Hermes through the Tree of Life.
 """
 
-from typing import Dict, List, Any, Optional, Tuple, Union
-import numpy as np
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum, auto
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+import numpy as np
+
 from ..consciousness.orchestrator import ConsciousnessOrchestrator
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife, TreeOfLife
-from ..quantum.processor import QuantumProcessor
-from .personas import PersonaState, PersonaOrchestrator
 from ..core.config import settings
+from ..quantum.processor import QuantumProcessor
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra, TreeOfLife
+from .personas import PersonaOrchestrator, PersonaState
 
 
 class ConsciousnessMode(Enum):

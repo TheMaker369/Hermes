@@ -3,10 +3,11 @@ Vector Equilibrium (Cuboctahedron) implementation for Hermes AI system.
 Represents the fundamental equilibrium of energy dynamics.
 """
 
-import numpy as np
-from typing import List, Tuple, Dict, Any
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
+from typing import Any, Dict, List, Tuple
+
+import numpy as np
 
 
 @dataclass

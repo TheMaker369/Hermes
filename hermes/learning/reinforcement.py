@@ -2,13 +2,15 @@
 Advanced reinforcement learning with quantum enhancements.
 """
 
-from typing import List, Dict, Any, Optional, Tuple
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
+
 import numpy as np
 import torch
 import torch.nn as nn
-from dataclasses import dataclass
-from ..quantum.optimization import optimizer
+
 from ..core.memory import memory_manager
+from ..quantum.optimization import optimizer
 
 
 @dataclass

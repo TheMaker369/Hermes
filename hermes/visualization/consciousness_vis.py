@@ -3,14 +3,16 @@ Visualization system for consciousness fields and sacred geometry.
 Integrates with Apré and Magí personas.
 """
 
+from typing import Any, Dict, List, Optional, Tuple
+
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from typing import Dict, List, Any, Optional, Tuple
-from ..core.personas import PersonaOrchestrator
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife
+
 from ..consciousness.orchestrator import ConsciousnessOrchestrator
 from ..core.config import settings
+from ..core.personas import PersonaOrchestrator
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 
 
 class ConsciousnessVisualizer:

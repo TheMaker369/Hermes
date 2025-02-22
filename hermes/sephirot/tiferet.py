@@ -3,10 +3,11 @@ Tiferet (Beauty) - Response harmonization and integration.
 Harmonizes outputs from MAGI (Chokmah) and APRE (Binah) into coherent responses.
 """
 
-from typing import Dict, List, Optional, Union
 import logging
-from pydantic import BaseModel
+from typing import Dict, List, Optional, Union
+
 import numpy as np
+from pydantic import BaseModel
 
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker

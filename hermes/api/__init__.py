@@ -2,12 +2,13 @@
 FastAPI endpoints for the Hermes AI System.
 """
 
-from fastapi import FastAPI, HTTPException
+from typing import Any, Dict, Optional
 from uuid import uuid4
-from typing import Dict, Any, Optional
 
-from ..core.orchestrator import orchestrator
+from fastapi import FastAPI, HTTPException
+
 from ..core.memory import memory_manager
+from ..core.orchestrator import orchestrator
 from ..sephirot.tiferet import Tiferet
 
 app = FastAPI(

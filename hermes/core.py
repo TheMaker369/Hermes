@@ -2,26 +2,17 @@
 Core Hermes AI System implementation.
 """
 
-from typing import Dict, List, Optional, Union
 import logging
-from ray import serve
+from typing import Dict, List, Optional, Union
+
 from fastapi import FastAPI, HTTPException
+from ray import serve
 
 from .config import settings
-from .sephirot import (
-    Kether,
-    Chokmah,
-    Binah,
-    Chesed,
-    Gevurah,
-    Tiferet,
-    Netzach,
-    Hod,
-    Yesod,
-    Malkuth,
-)
-from .utils.logging import setup_logging
+from .sephirot import (Binah, Chesed, Chokmah, Gevurah, Hod, Kether, Malkuth,
+                       Netzach, Tiferet, Yesod)
 from .utils.circuit_breaker import circuit_breaker
+from .utils.logging import setup_logging
 
 logger = logging.getLogger(__name__)
 

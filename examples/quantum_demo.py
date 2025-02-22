@@ -2,10 +2,11 @@
 Practical demonstration of Hermes quantum capabilities.
 """
 
-from hermes.quantum.processor import quantum_processor
-from hermes.quantum.optimization import optimizer
-from hermes.quantum.security import security
 import numpy as np
+
+from hermes.quantum.optimization import optimizer
+from hermes.quantum.processor import quantum_processor
+from hermes.quantum.security import security
 
 
 def demonstrate_practical_quantum():

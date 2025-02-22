@@ -3,11 +3,12 @@ Binah (Understanding) - Pattern recognition and APRE integration.
 Implements the Automated Pattern Recognition Engine for deep analysis.
 """
 
-from typing import Dict, List, Optional, Union
 import logging
+from typing import Dict, List, Optional, Union
+
+import chromadb
 import numpy as np
 from pydantic import BaseModel
-import chromadb
 
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker

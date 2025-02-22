@@ -2,12 +2,14 @@
 Yesod (Foundation) - Data persistence and knowledge storage.
 """
 
-from typing import Dict, List, Optional
 import logging
+from typing import Dict, List, Optional
+
 import chromadb
-from chromadb.config import Settings as ChromaSettings
 import ray
+from chromadb.config import Settings as ChromaSettings
 from ray.util import ActorPool
+
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker
 

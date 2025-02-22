@@ -3,12 +3,13 @@ Enhanced configuration management for Hermes with dynamic settings and validatio
 Implements Tree of Life architecture and sacred geometry principles.
 """
 
-from typing import Dict, Any, Optional
-from pydantic_settings import BaseSettings
-from pydantic import validator
 import json
 import os
 from datetime import datetime
+from typing import Any, Dict, Optional
+
+from pydantic import validator
+from pydantic_settings import BaseSettings
 
 
 class HermesSettings(BaseSettings):
@@ -162,3 +163,12 @@ class HermesSettings(BaseSettings):
 settings = HermesSettings()
 settings.optimize_for_environment()
 settings.save_snapshot()
+
+class Settings(BaseSettings):
+    enable_gpu: bool = False
+    persona_weights: dict = {"apre": 0.5, "magi": 0.5}
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()

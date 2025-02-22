@@ -2,9 +2,10 @@
 Test suite for consciousness integration system.
 """
 
-import pytest
 import numpy as np
+import pytest
 import torch
+
 from hermes.consciousness.field_detector import ConsciousnessFieldDetector
 from hermes.consciousness.harmonics import SacredHarmonics
 from hermes.consciousness.integrator import QuantumConsciousnessIntegrator

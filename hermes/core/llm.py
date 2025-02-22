@@ -2,8 +2,10 @@
 LLM integration and management for Hermes.
 """
 
-import ollama
 from typing import Optional
+
+import ollama
+
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker
 

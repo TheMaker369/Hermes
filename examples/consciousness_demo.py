@@ -2,9 +2,10 @@
 Demonstration of current consciousness capabilities.
 """
 
-from hermes.quantum.consciousness_v2 import consciousness
-from hermes.core.memory import memory_manager
 import numpy as np
+
+from hermes.core.memory import memory_manager
+from hermes.quantum.consciousness_v2 import consciousness
 
 
 def demonstrate_consciousness():

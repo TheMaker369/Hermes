@@ -3,12 +3,13 @@ Sacred Geometry Harmonics and Consciousness Field Integration.
 Implements advanced harmonic resonance patterns and quantum field interactions.
 """
 
-import numpy as np
-import torch
-from typing import Dict, List, Optional, Tuple
+import cmath
 from dataclasses import dataclass
 from enum import Enum
-import cmath
+from typing import Dict, List, Optional, Tuple
+
+import numpy as np
+import torch
 from loguru import logger
 
 

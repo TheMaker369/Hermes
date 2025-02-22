@@ -3,15 +3,17 @@ Quantum Consciousness Integration System.
 Combines quantum states, consciousness fields, and sacred geometry.
 """
 
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
+
 import numpy as np
 import torch
-from typing import Dict, List, Optional, Tuple, Any
-from dataclasses import dataclass
 from loguru import logger
-from .field_detector import ConsciousnessFieldDetector
-from .harmonics import SacredHarmonics
+
 from ..quantum.error_correction import QuantumErrorCorrector
 from ..sacred.patterns import Merkaba
+from .field_detector import ConsciousnessFieldDetector
+from .harmonics import SacredHarmonics
 
 
 @dataclass

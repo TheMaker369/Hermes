@@ -3,11 +3,12 @@ Hermetic system implementation for consciousness evolution.
 Implements the seven Hermetic principles for quantum transformation.
 """
 
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
 
 
 @dataclass

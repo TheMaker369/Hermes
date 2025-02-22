@@ -2,14 +2,16 @@
 Quantum processing with consciousness integration and sacred geometry.
 """
 
-from typing import List, Dict, Any, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
+
 import numpy as np
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit import Aer, execute, IBMQ
+from qiskit import (IBMQ, Aer, ClassicalRegister, QuantumCircuit,
+                    QuantumRegister, execute)
 from qiskit.providers.ibmq import least_busy
 from qiskit.quantum_info import Statevector
+
 from ..core.config import settings
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 
 
 class QuantumProcessor:

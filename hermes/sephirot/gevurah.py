@@ -2,10 +2,12 @@
 Gevurah (Severity) - Security, validation, and constraints.
 """
 
-from typing import Dict, Optional
 import logging
 import re
+from typing import Dict, Optional
+
 from fastapi import HTTPException
+
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker
 

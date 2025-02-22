@@ -2,11 +2,13 @@
 Advanced harmonization system using sacred geometry and quantum principles.
 """
 
+from typing import Any, Dict, List, Optional
+
 import numpy as np
-from typing import List, Dict, Any, Optional
 import torch
-from .quantum import quantum_processor
+
 from ..config import settings
+from .quantum import quantum_processor
 
 
 class HarmonicProcessor:
@@ -153,11 +155,12 @@ harmonic_processor = HarmonicProcessor()
 Harmonic resonance and frequency management for Hermes AI system.
 """
 
-import numpy as np
-from typing import Dict, Any, List, Optional
+from collections import deque
 from dataclasses import dataclass
 from datetime import datetime
-from collections import deque
+from typing import Any, Dict, List, Optional
+
+import numpy as np
 
 
 @dataclass

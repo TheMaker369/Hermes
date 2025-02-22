@@ -70,3 +70,6 @@ pytest tests/ -v --cov=hermes
 - ChromaDB for vector storage
 - Ray for distributed computing
 - ACID-compliant operations
+
+## Binder Folder
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/TheMaker369/Hermes/HEAD)

@@ -3,8 +3,9 @@ Quantum biological interface combining nanotechnology and epigenetics.
 """
 
 import numpy as np
-from ..sacred.geometry import geometry
+
 from ..learning.meta import learning_system
+from ..sacred.geometry import geometry
 
 
 class EpigeneticNanobot:

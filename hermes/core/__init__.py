@@ -2,9 +2,9 @@
 Core module initialization for Hermes AI system.
 """
 
+from .harmonics import FrequencyHarmonizer
 from .orchestrator import KeterOrchestrator
 from .quantum import QuantumProcessor
-from .harmonics import FrequencyHarmonizer
 
 Hermes = KeterOrchestrator  # Main interface alias
 

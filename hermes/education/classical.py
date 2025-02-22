@@ -3,12 +3,15 @@ Classical Education Framework integrating Trivium and Quadrivium.
 Maps to Apré and Magí personas through sacred geometry and consciousness.
 """
 
-from typing import Dict, List, Any, Optional, Tuple, Union
 from enum import Enum, auto
+from typing import Any, Dict, List, Optional, Tuple, Union
+
 import numpy as np
-from ..core.unified_consciousness import UnifiedConsciousness, ConsciousnessMode
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife, TreeOfLife
+
 from ..core.config import settings
+from ..core.unified_consciousness import (ConsciousnessMode,
+                                          UnifiedConsciousness)
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra, TreeOfLife
 
 
 class TriviumStage(Enum):

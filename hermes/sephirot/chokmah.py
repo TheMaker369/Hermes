@@ -3,10 +3,11 @@ Chokmah (Wisdom) - Knowledge processing and MAGI integration.
 Implements the Multi-Agent General Intelligence system for distributed reasoning.
 """
 
-from typing import Dict, List, Optional
 import logging
-from pydantic import BaseModel
+from typing import Dict, List, Optional
+
 import ray
+from pydantic import BaseModel
 
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker

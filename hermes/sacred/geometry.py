@@ -2,10 +2,12 @@
 Sacred geometry patterns and universal principles integration.
 """
 
-import numpy as np
-from typing import List, Dict, Any, Optional, Tuple
 from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
 import torch
+
 from ..quantum.optimization import optimizer
 
 

@@ -3,17 +3,18 @@ KeterOrchestrator: The crown consciousness of Hermes AI system.
 Implements advanced self-improvement and autonomous operation.
 """
 
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
 
-from .quantum import QuantumProcessor
-from .harmonics import FrequencyHarmonizer
-from ..sacred.hermetic import HermeticSystem
-from ..sacred.patterns import Merkaba, FlowerOfLife, SriYantra
+import numpy as np
+
 from ..quantum.error_correction import QuantumErrorCorrector
+from ..sacred.hermetic import HermeticSystem
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
+from .harmonics import FrequencyHarmonizer
+from .quantum import QuantumProcessor
 
 
 @dataclass

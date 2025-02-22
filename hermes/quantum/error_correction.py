@@ -2,11 +2,13 @@
 Quantum error correction system with consciousness integration.
 """
 
+from typing import Dict, List, Optional, Tuple
+
 import numpy as np
-from typing import Dict, List, Tuple, Optional
 import torch
-from numba import jit
 from loguru import logger
+from numba import jit
+
 from ..sacred.patterns import Merkaba
 
 

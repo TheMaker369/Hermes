@@ -2,14 +2,16 @@
 Meta-learning system combining multiple learning paradigms.
 """
 
-from typing import List, Dict, Any, Optional, Union
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Union
+
 import numpy as np
 import torch
 import torch.nn as nn
-from dataclasses import dataclass
-from .reinforcement import QuantumPPOAgent
-from ..quantum.optimization import optimizer
+
 from ..core.memory import memory_manager
+from ..quantum.optimization import optimizer
+from .reinforcement import QuantumPPOAgent
 
 
 @dataclass

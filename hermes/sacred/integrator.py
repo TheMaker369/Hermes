@@ -3,24 +3,17 @@ Sacred geometry integration module for Hermes AI system.
 Connects sacred patterns with quantum processing and harmonic resonance.
 """
 
-import numpy as np
-from typing import Dict, Any, List, Optional
 from datetime import datetime
+from typing import Any, Dict, List, Optional
 
+import numpy as np
+
+from ..core.harmonics import FrequencyHarmonizer
+from ..core.quantum import QuantumProcessor
+from .patterns import (Dodecahedron, FlowerOfLife, Icosahedron, MetatronsCube,
+                       Octahedron, PlatonicSolid, Tetrahedron, TreeOfLife)
 from .sri_yantra import SriYantra
 from .vector_equilibrium import VectorEquilibrium
-from .patterns import (
-    MetatronsCube,
-    TreeOfLife,
-    FlowerOfLife,
-    PlatonicSolid,
-    Tetrahedron,
-    Octahedron,
-    Icosahedron,
-    Dodecahedron,
-)
-from ..core.quantum import QuantumProcessor
-from ..core.harmonics import FrequencyHarmonizer
 
 
 class SacredGeometryIntegrator:

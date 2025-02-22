@@ -2,9 +2,11 @@
 Trivium and Quadrivium integration for foundational knowledge processing.
 """
 
-from typing import Dict, Any, List
-import numpy as np
 from dataclasses import dataclass
+from typing import Any, Dict, List
+
+import numpy as np
+
 from ..sacred.geometry import geometry
 from ..sacred.hermetic import hermetic
 from .memory import memory_manager

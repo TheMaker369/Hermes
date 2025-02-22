@@ -3,13 +3,14 @@ Enhanced quantum processor implementation for Hermes AI system.
 Integrates sacred geometry patterns with quantum computing.
 """
 
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
 
-from ..sacred.patterns import Merkaba, FlowerOfLife, SriYantra
+import numpy as np
+
 from ..quantum.error_correction import QuantumErrorCorrector
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 from .harmonics import FrequencyHarmonizer
 
 

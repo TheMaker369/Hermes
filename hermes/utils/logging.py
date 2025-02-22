@@ -5,6 +5,7 @@ Logging configuration for the Hermes AI System.
 import logging
 import sys
 from typing import Optional
+
 from hermes.utils.logging import logger
 
 
@@ -41,8 +42,9 @@ def setup_logging(level: Optional[int] = None):
     logging.getLogger("ray").setLevel(logging.WARNING)
 
 
-from loguru import logger
 import sys
+
+from loguru import logger
 
 # Remove default handler
 logger.remove()

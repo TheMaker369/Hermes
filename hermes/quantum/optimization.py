@@ -2,12 +2,13 @@
 Quantum optimization algorithms for enhanced processing.
 """
 
-from typing import List, Dict, Any, Callable, Optional
+from typing import Any, Callable, Dict, List, Optional
+
 import numpy as np
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit.algorithms.optimizers import SPSA, COBYLA
-from qiskit.circuit import Parameter
 import pennylane as qml
+from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
+from qiskit.algorithms.optimizers import COBYLA, SPSA
+from qiskit.circuit import Parameter
 
 
 class QuantumOptimizer:

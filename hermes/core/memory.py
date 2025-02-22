@@ -4,7 +4,9 @@ Memory management for Hermes using ChromaDB and Ray.
 
 import threading
 from typing import Any, Dict, List, Optional
+
 import chromadb
+
 from ..config import settings
 
 

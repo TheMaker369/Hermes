@@ -3,11 +3,13 @@ Sacred geometry patterns implementation for Hermes AI system.
 Implements Merkaba, Flower of Life, and consciousness integration.
 """
 
-import numpy as np
-from typing import Dict, List, Any, Optional, Tuple
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
+
 from ..core.config import settings
 
 

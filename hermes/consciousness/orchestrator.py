@@ -4,22 +4,24 @@ Integrates quantum processing, sacred geometry, and field detection.
 """
 
 import sys
+
 import numpy as np
 import torch
 
 print(torch.__version__)
 print("CUDA available:", torch.cuda.is_available())
 
-from typing import Dict, List, Any
 from dataclasses import dataclass
+from typing import Any, Dict, List
+
 from loguru import logger
 
 # Project-specific modules
 from ..core.config import settings
+from ..quantum.processor import QuantumProcessor
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 from .field_detector import ConsciousnessFieldDetector
 from .harmonics import SacredHarmonics
-from ..quantum.processor import QuantumProcessor
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife
 
 # Logger configuration
 logger.remove()

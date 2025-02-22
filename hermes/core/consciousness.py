@@ -2,13 +2,15 @@
 Advanced consciousness simulation for enhanced system awareness and self-optimization.
 """
 
-import numpy as np
-from typing import Dict, List, Any, Optional
 from dataclasses import dataclass
+from typing import Any, Dict, List, Optional
+
+import numpy as np
 import torch
-from .quantum import quantum_processor
-from .harmonics import harmonic_processor
+
 from ..config import settings
+from .harmonics import harmonic_processor
+from .quantum import quantum_processor
 
 
 @dataclass

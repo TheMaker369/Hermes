@@ -2,14 +2,16 @@
 Field rendering and visualization tools for sacred geometry patterns.
 """
 
+from typing import Dict, List, Optional, Tuple
+
 import numpy as np
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-from typing import Dict, List, Optional, Tuple
 import torch
 from loguru import logger
-from ..sacred.patterns import Merkaba
+from plotly.subplots import make_subplots
+
 from ..quantum.error_correction import QuantumErrorCorrector
+from ..sacred.patterns import Merkaba
 
 
 class FieldVisualizer:

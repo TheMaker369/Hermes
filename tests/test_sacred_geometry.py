@@ -2,11 +2,12 @@
 Test suite for sacred geometry patterns and quantum integration.
 """
 
-import pytest
 import numpy as np
+import pytest
 import torch
-from hermes.sacred.patterns import Merkaba
+
 from hermes.quantum.error_correction import QuantumErrorCorrector
+from hermes.sacred.patterns import Merkaba
 from hermes.visualization.field_rendering import FieldVisualizer
 
 

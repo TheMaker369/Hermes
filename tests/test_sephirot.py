@@ -2,16 +2,17 @@
 Tests for the Sephirot components.
 """
 
-import pytest
 from unittest.mock import Mock, patch
-import chromadb
-import ray
-import httpx
 
-from hermes.sephirot.yesod import Yesod
-from hermes.sephirot.gevurah import Gevurah, Sanitizer
-from hermes.sephirot.netzach import Netzach, APIAdapter
+import chromadb
+import httpx
+import pytest
+import ray
+
 from hermes.config import settings
+from hermes.sephirot.gevurah import Gevurah, Sanitizer
+from hermes.sephirot.netzach import APIAdapter, Netzach
+from hermes.sephirot.yesod import Yesod
 
 
 # Yesod (Foundation) Tests

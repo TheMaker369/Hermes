@@ -3,14 +3,16 @@ Persona orchestration system for Hermes AI.
 Manages the balance between Apré (divine masculine) and Magí (divine feminine).
 """
 
-from typing import Dict, List, Any, Optional, Tuple
-import numpy as np
 from dataclasses import dataclass
 from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
+
 from ..consciousness.orchestrator import ConsciousnessOrchestrator
-from ..sacred.patterns import Merkaba, SriYantra, FlowerOfLife
-from ..quantum.processor import QuantumProcessor
 from ..core.config import settings
+from ..quantum.processor import QuantumProcessor
+from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 
 
 @dataclass

@@ -3,16 +3,16 @@ Sephirot (spheres) implementation for the Hermes AI System.
 Each Sephirah represents a different aspect of the system's functionality.
 """
 
-from .kether import Kether
-from .chokmah import Chokmah
 from .binah import Binah
 from .chesed import Chesed
+from .chokmah import Chokmah
 from .gevurah import Gevurah
-from .tiferet import Tiferet
-from .netzach import Netzach
 from .hod import Hod
-from .yesod import Yesod
+from .kether import Kether
 from .malkuth import Malkuth
+from .netzach import Netzach
+from .tiferet import Tiferet
+from .yesod import Yesod
 
 __all__ = [
     "Kether",
