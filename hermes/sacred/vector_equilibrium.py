@@ -6,6 +6,7 @@ Represents the fundamental equilibrium of energy dynamics.
 import math
 from dataclasses import dataclass
 from typing import Any, Dict, List, Tuple
+from hermes.utils.logging import logger
 
 import numpy as np
 

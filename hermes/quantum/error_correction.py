@@ -10,6 +10,7 @@ from loguru import logger
 from numba import jit
 
 from ..sacred.patterns import Merkaba
+from hermes.utils.logging import logger
 
 
 @jit(nopython=True)

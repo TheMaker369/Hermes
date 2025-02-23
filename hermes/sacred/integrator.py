@@ -14,6 +14,7 @@ from .patterns import (Dodecahedron, FlowerOfLife, Icosahedron, MetatronsCube,
                        Octahedron, PlatonicSolid, Tetrahedron, TreeOfLife)
 from .sri_yantra import SriYantra
 from .vector_equilibrium import VectorEquilibrium
+from hermes.utils.logging import logger
 
 
 class SacredGeometryIntegrator:

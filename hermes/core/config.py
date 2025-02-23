@@ -1,19 +1,13 @@
-"""
-Enhanced configuration management for Hermes with dynamic settings and validation.
-Implements Tree of Life architecture and sacred geometry principles.
-"""
-
 import json
 import os
 from datetime import datetime
 from typing import Any, Dict, Optional
-
-from pydantic import validator
-from pydantic_settings import BaseSettings
-
+from pydantic import BaseSettings, validator
 
 class HermesSettings(BaseSettings):
-    """Enhanced settings with validation and dynamic configuration."""
+    """Enhanced configuration management for Hermes with dynamic settings and validation.
+    Implements Tree of Life architecture and sacred geometry principles.
+    """
 
     # API Keys with validation
     openai_api_key: str = ""
@@ -83,7 +77,7 @@ class HermesSettings(BaseSettings):
         "phi": 1.618033988749895,  # Golden ratio
         "sqrt2": 1.4142135623730951,
         "sqrt3": 1.7320508075688772,
-        "sqrt5": 2.236067977499790,
+        "sqrt5": 2.23606797749979,
     }
 
     # Consciousness Integration
@@ -121,36 +115,30 @@ class HermesSettings(BaseSettings):
 
     @validator("sephirot_weights")
     def validate_sephirot_weights(cls, v):
-        """Ensure Sephirot weights sum to 1.0"""
         if abs(sum(v.values()) - 1.0) > 0.001:
             raise ValueError("Sephirot weights must sum to 1.0")
         return v
 
     @validator("persona_weights")
     def validate_persona_weights(cls, v):
-        """Ensure persona weights sum to 1.0"""
         if abs(sum(v.values()) - 1.0) > 0.001:
             raise ValueError("Persona weights must sum to 1.0")
         return v
 
     @validator("encryption_key")
     def validate_encryption(cls, v):
-        """Generate encryption key if not provided"""
         if not v:
             from cryptography.fernet import Fernet
-
             return Fernet.generate_key().decode()
         return v
 
     def optimize_for_environment(self):
-        """Optimize settings based on environment"""
         if os.environ.get("HERMES_ENV") == "production":
             self.enable_quantum = True
             self.enable_distributed = True
             self.consciousness_params["field_detection"] = True
 
     def save_snapshot(self):
-        """Save current configuration snapshot"""
         snapshot = {
             "timestamp": datetime.now().isoformat(),
             "config": json.loads(self.json()),
@@ -158,17 +146,10 @@ class HermesSettings(BaseSettings):
         with open(f"config_snapshot_{snapshot['timestamp']}.json", "w") as f:
             json.dump(snapshot, f, indent=2)
 
-
-# Global settings instance
-settings = HermesSettings()
-settings.optimize_for_environment()
-settings.save_snapshot()
-
-class Settings(BaseSettings):
-    enable_gpu: bool = False
-    persona_weights: dict = {"apre": 0.5, "magi": 0.5}
-
     class Config:
         env_file = ".env"
 
-settings = Settings()
+# Create a single global settings instance.
+settings = HermesSettings()
+settings.optimize_for_environment()
+settings.save_snapshot()

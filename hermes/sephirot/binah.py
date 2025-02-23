@@ -12,6 +12,7 @@ from pydantic import BaseModel
 
 from ..config import settings
 from ..utils.circuit_breaker import circuit_breaker
+from hermes.utils.logging import logger
 
 logger = logging.getLogger(__name__)
 

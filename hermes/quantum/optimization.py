@@ -9,6 +9,7 @@ import pennylane as qml
 from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister
 from qiskit.algorithms.optimizers import COBYLA, SPSA
 from qiskit.circuit import Parameter
+from hermes.utils.logging import logger
 
 
 class QuantumOptimizer:

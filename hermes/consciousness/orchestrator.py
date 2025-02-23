@@ -22,6 +22,7 @@ from ..quantum.processor import QuantumProcessor
 from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra
 from .field_detector import ConsciousnessFieldDetector
 from .harmonics import SacredHarmonics
+from hermes.utils.logging import logger
 
 # Logger configuration
 logger.remove()

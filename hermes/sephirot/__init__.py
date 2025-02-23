@@ -2,6 +2,7 @@
 Sephirot (spheres) implementation for the Hermes AI System.
 Each Sephirah represents a different aspect of the system's functionality.
 """
+from hermes.utils.logging import logger
 
 from .binah import Binah
 from .chesed import Chesed

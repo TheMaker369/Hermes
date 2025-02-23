@@ -10,6 +10,13 @@ from fastapi import FastAPI, HTTPException
 from ..core.memory import memory_manager
 from ..core.orchestrator import orchestrator
 from ..sephirot.tiferet import Tiferet
+from hermes.utils.logging import logger
+from hermes.core.config import settings
+
+if settings.enable_gpu:
+    # GPU-specific logic here
+    pass
+
 
 app = FastAPI(
     title="Hermes API",

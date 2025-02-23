@@ -10,6 +10,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
+from hermes.utils.logging import logger
 from ..quantum.error_correction import QuantumErrorCorrector
 from ..sacred.hermetic import HermeticSystem
 from ..sacred.patterns import FlowerOfLife, Merkaba, SriYantra

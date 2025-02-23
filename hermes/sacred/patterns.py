@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
 
 from ..core.config import settings
+from hermes.utils.logging import logger
 
 
 @dataclass

@@ -5,6 +5,7 @@ Circuit breaker pattern implementation for external service calls.
 import functools
 import logging
 from typing import Any, Callable
+from hermes.utils.logging import logger
 
 logger = logging.getLogger(__name__)
 

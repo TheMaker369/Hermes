@@ -9,6 +9,7 @@ import numpy as np
 import torch
 
 from ..quantum.optimization import optimizer
+from hermes.utils.logging import logger
 
 
 @dataclass

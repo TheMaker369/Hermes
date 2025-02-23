@@ -1,5 +1,6 @@
 from loguru import logger
 import sys
+from hermes.utils.logging import logger
 
 # Remove default Loguru handler
 logger.remove()
